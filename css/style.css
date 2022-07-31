@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css?family=Red+Hat+Display:wght@400;700&display=swap");
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-bright-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+    --font-size: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+/*    outline: solid 1px black;*/
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Red Hat Display";
+    font-size: calc(var(--font-size) * 0.8);
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bg {
+    position: absolute;
+}
+
+.bg-svg {
+    height: 50%;
+    width: 100%;
+}
+
+.mobile {
+    display: block;
+}
+
+.desktop {
+    display: none;
+}
+
+.bg-blocker {
+    height: 100%;
+    width: 100%;
+    background: var(--pale-blue);
+    opacity: 75%;
+}
+
+.app-container {
+    aspect-ratio: 3/5;
+    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    background: var(--white);
+    aspect-ratio: 3/5;
+    min-width: 250px;
+    max-width: 300px;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.illustration-container {
+    position: relative;
+}
+
+.illustration-container > img {
+    width: 100%;
+}
+
+.summary {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.summary > h1 {
+    font-size: calc(var(--font-size) * 1.2);
+    margin-top: 0;
+    -webkit-text-stroke: 1px var(--dark-blue);
+    letter-spacing: 1px;
+}
+
+.summary > p {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.text {
+    font-size: calc(var(--font-size) * 0.8);
+    color: var(--desaturated-blue);
+    line-height: 1.2rem;
+}
+
+.plan {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+    max-height: 4rem;
+    background: var(--very-bright-blue);
+    border-radius: 0.5rem;
+}
+
+.plan > a {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    margin: 1rem;
+    font-weight: bold;
+    font-size: calc(var(--font-size) * 0.8);
+}
+
+.plan-type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.plan-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.plan-details > * {
+    margin: 0;
+}
+
+.plan-type > img {
+    height: 3rem;
+    aspect-ratio: 1;
+}
+
+.plan-name {
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.buttons-panel {
+    position: relative;
+    margin-block: 1rem;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons-panel > *:hover {
+    cursor: pointer;
+}
+
+.button {
+    position: relative;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+}
+
+.buttons-panel > button {
+    min-height: 2.5rem;
+    max-height: 3rem;
+    background: var(--bright-blue);
+    border: none;
+    border-radius: 0.5rem;
+    width: 100%;
+    color: var(--white);
+    font-weight: bold;
+    box-shadow: 0 1rem 1rem #00000020;
+    border: solid 1px #00000000;
+}
+
+.buttons-panel > button:hover {
+    background: var(--white);
+    color: var(--bright-blue);
+    border: solid 1px var(--bright-blue);
+}
+
+.buttons-panel > p {
+    font-weight: bold;
+    margin: 0.5rem;
+}
+
+.buttons-panel > p:hover {
+    font-size: calc(var(--font-size) * 0.9);
+    text-decoration: underline;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 0.2rem;
+    width: 100%;
+    max-width: calc(100vw - 2rem);
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+a:hover {
+    color: var(--white);
+    background: var(--desaturated-blue);
+    border-radius: 0.25rem;
+}
+
+@media (min-width: 650px) {
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    .summary > h1 {
+        margin: 1rem;
+    }
+
+    .buttons-panel {
+        margin-block: 1.5rem;
+    }
+
+    .buttons-panel > button {
+        height: 4rem;
+    }
+
+    .buttons-panel > p {
+        margin: 1rem;
+    }
+}
